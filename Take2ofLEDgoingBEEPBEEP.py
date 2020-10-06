@@ -2,11 +2,11 @@ import RPi.GPIO as GPIO
 import time
 import random
 
-ledPin = random.randint(11, 16)    #using ledPinPin is a unique var in that you won't need to reference it in a function
+ledPin = random.randint(11, 16)
 thyme = 10
 
 def setup():
-    # global ledPin
+    global ledPin
     GPIO.setmode(GPIO.BOARD)
     GPIO.setup(ledPin, GPIO.OUT)
     GPIO.output(ledPin, GPIO.LOW)
