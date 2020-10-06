@@ -1,6 +1,7 @@
 import RPi.GPIO as GPIO
 import time
 import random
+#REEEEEEEEEEEEEEEEEEEEEEEEEEE is all I can say atm
 
 ledPin = random.randint(11, 16)    #using ledPinPin is a unique var in that you won't need to reference it in a function
 thyme = 10
