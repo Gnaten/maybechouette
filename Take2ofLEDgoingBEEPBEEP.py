@@ -6,6 +6,7 @@ LED = random.randint(11, 16)
 thyme = 10
 
 def setup():
+    global LED
     GPIO.setmode(GPIO.BOARD)
     GPIO.setup(LED, GPIO.OUT)
     GPIO.output(LED, GPIO.LOW)
