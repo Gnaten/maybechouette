@@ -2,23 +2,24 @@ import RPi.GPIO as GPIO
 import time
 import random
 
-LED = random.randint(11, 16)
+ledPin = random.randint(11, 16)    #using ledPinPin is a unique var in that you won't need to reference it in a function
 thyme = 10
 
 def setup():
+    # global ledPin
     GPIO.setmode(GPIO.BOARD)
-    GPIO.setup(LED, GPIO.OUT)
-    GPIO.output(LED, GPIO.LOW)
-    if LED == 14:
-        LED = random.randint(11, 16)
+    GPIO.setup(ledPin, GPIO.OUT)
+    GPIO.output(ledPin, GPIO.LOW)
+    if ledPin == 14:
+        ledPin = random.randint(11, 16)
         setup()
     else:
-        print('GPIO Pin ID: %d'%LED)
+        print('\nGPIO Pin ID: %d'%ledPin)
         countdown()
 
 def countdown():
     global thyme
-    print('Begin Wiring!')
+    print('\nBegin Wiring!')
     time.sleep(1)
     while thyme >= 0:
         print('Seconds Remaining: %d'%thyme)
@@ -27,13 +28,14 @@ def countdown():
     else:
         print('Initiating Protocol...')
         time.sleep(2.5)
+        print('Ctrl + C to Disable')
         loop()
 
 def loop():
     while True:
-        GPIO.output(LED, GPIO.LOW)
+        GPIO.output(ledPin, GPIO.HIGH)
         time.sleep(1)
-        GPIO.output(LED, GPIO.HIGH)
+        GPIO.output(ledPin, GPIO.LOW)
         time.sleep(1)
 
 def destroy():
