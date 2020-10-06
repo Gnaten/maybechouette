@@ -1,6 +1,7 @@
 import RPi.GPIO as GPIO
 import time
 import random
+#REEEEEEEEEEEEEEEEEEEEEEEEEEE is all I can say atm
 
 ledPin = random.randint(11, 16)
 thyme = 10
