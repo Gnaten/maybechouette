@@ -1,6 +1,6 @@
 import RPi.GPIO as GPIO
 
-LED = 15		#Replace number with desired PINOUT #
+LED = 7		#Replace number with desired PINOUT #
 
 def setup():
    GPIO.setmode(GPIO.BOARD)
@@ -12,3 +12,5 @@ def destroy():
 
 if __name__ == '__main__':
    setup()
+   destroy()
+   print('GPIO.cleanup() Complete...')
