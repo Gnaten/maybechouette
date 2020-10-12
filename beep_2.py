@@ -2,6 +2,7 @@
 import RPi.GPIO as GPIO
 import time
 
+cycles = 0
 led = [7, 11, 12, 13, 15, 38, 16, 40, 18, 22]		#If using lists, make sure the numbers are in quotations
 
 def setup():
@@ -12,16 +13,18 @@ def setup():
 	time.sleep(1)
 
 def loop():
+	global cycles
 	while True:
 		for pin in led:
 			GPIO.output(pin, 1)		#Output high
-			time.sleep(0.1)
+			time.sleep(0.01)
 			GPIO.output(pin, 0)		#Output low
 
 		for pin in led[::-1]:		#[::-1] makes list run in reverse
 			GPIO.output(pin, 1)
-			time.sleep(0.1)
+			time.sleep(0.01)
 			GPIO.output(pin, 0)
+		cycles = cycles + 1
 
 # #Farewell light wave!
 # 	 	GPIO.output(led[0], 1)
@@ -119,4 +122,5 @@ if __name__ == '__main__':
 		loop()
 	except KeyboardInterrupt:
 		print(' --> Stopped')
+		print('\n98.7 the Wave went through %d cycles'%cycles)
 		destroy()
