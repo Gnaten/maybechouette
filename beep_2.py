@@ -5,19 +5,20 @@ import time
 led = [7, 11, 12, 13, 15, 38, 16, 40, 18, 22]		#If using lists, make sure the numbers are in quotations
 
 def setup():
-	GPIO.setmode(GPIO.BOARD)
+	GPIO.setmode(GPIO.BOARD)		#Tells the RPi that this script uses the breadboard extension
 	GPIO.setup(led, GPIO.OUT)		#Setting up pins only for providing power
-	GPIO.output(led, 0)			#Pins 7, 11, 12, and 13 are set to GPIO.LOW in output
+	GPIO.output(led, 0)				#All pins listed in the list are set to GPIO.LOW in output
 	print('Setup Complete')
 	time.sleep(1)
 
 def loop():
 	 while True:
-		 for pin in led:
-			 GPIO.output(pin, 1)
-			 time.sleep(0.1)
-			 GPIO.output(pin, 0)
-		for pin in led[::-1]:
+		for pin in led:
+			GPIO.output(pin, 1)		#Output high
+			time.sleep(0.1)
+			GPIO.output(pin, 0)		#Output low
+
+		for pin in led[::-1]:		#[::-1] makes list run in reverse
 			GPIO.output(pin, 1)
 			time.sleep(0.1)
 			GPIO.output(pin, 0)
