@@ -12,7 +12,7 @@ def setup():
 	time.sleep(1)
 
 def loop():
-	 while True:
+	while True:
 		for pin in led:
 			GPIO.output(pin, 1)		#Output high
 			time.sleep(0.1)
