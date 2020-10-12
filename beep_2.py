@@ -31,6 +31,7 @@ def setup():
 
 def loop():
 	 while True:
+#Farewell light wave!
 	 	GPIO.output(led[0], 1)
 	 	time.sleep(0.1)
 	 	GPIO.output(led[0], 0)
@@ -70,6 +71,48 @@ def loop():
 	 	GPIO.output(led[9], 1)
 	 	time.sleep(0.1)
 	 	GPIO.output(led[9], 0)
+
+#Bringing the light wave back home!
+
+	 	GPIO.output(led[9], 1)
+	 	time.sleep(0.1)
+	 	GPIO.output(led[9], 0)
+
+	 	GPIO.output(led[8], 1)
+	 	time.sleep(0.1)
+	 	GPIO.output(led[8], 0)
+
+	 	GPIO.output(led[7], 1)
+	 	time.sleep(0.1)
+	 	GPIO.output(led[7], 0)
+
+	 	GPIO.output(led[6], 1)
+	 	time.sleep(0.1)
+	 	GPIO.output(led[6], 0)
+
+	 	GPIO.output(led[5], 1)
+	 	time.sleep(0.1)
+	 	GPIO.output(led[5], 0)
+
+	 	GPIO.output(led[4], 1)
+	 	time.sleep(0.1)
+	 	GPIO.output(led[4], 0)
+
+	 	GPIO.output(led[3], 1)
+	 	time.sleep(0.1)
+	 	GPIO.output(led[3], 0)
+
+	 	GPIO.output(led[2], 1)
+	 	time.sleep(0.1)
+	 	GPIO.output(led[2], 0)
+
+	 	GPIO.output(led[1], 1)
+	 	time.sleep(0.1)
+	 	GPIO.output(led[1], 0)
+
+	 	GPIO.output(led[0], 1)
+	 	time.sleep(0.1)
+	 	GPIO.output(led[0], 0)
 
 
 def destroy():
