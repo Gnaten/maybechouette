@@ -2,7 +2,7 @@
 import RPi.GPIO as GPIO
 import time
 
-led = ["7", "11", "12", "13", "15", "38", "16", "40", "18", "22"]		#If using lists, make sure the numbers are in quotations
+led = [7, 11, 12, 13, 15, 38, 16, 40, 18, 22]		#If using lists, make sure the numbers are in quotations
 
 def setup():
 	GPIO.setmode(GPIO.BOARD)
@@ -13,7 +13,7 @@ def setup():
 	GPIO.setup(15, GPIO.OUT)
 	GPIO.setup(38, GPIO.OUT)
 	GPIO.setup(16, GPIO.OUT)
-	GPIO.setup(40, GPIO.OUTPUT)
+	GPIO.setup(40, GPIO.OUT)
 	GPIO.setup(18, GPIO.OUT)
 	GPIO.setup(22, GPIO.OUT)
 	GPIO.output(7, 0)			#Pins 7, 11, 12, and 13 are set to GPIO.LOW in output
@@ -55,9 +55,10 @@ def destroy():
 	GPIO.cleanup()
 
 if __name__ == '__main__':
-	print('\nSetup Sequencing...\n')
+	print('\nSetup Sequencing...')
 	time.sleep(1)
 	setup()
+	print('\nRunning...')
 	try:
 		loop()
 	except KeyboardInterrupt:
