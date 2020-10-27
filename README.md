@@ -1,1 +1,1 @@
-for the cool kids with small penises
+for the cool kids with small penial canals
